@@ -13,13 +13,16 @@ const { logo, links } = Astro.props;
   <a href="/#hero">
     <img src={logo} alt="Ledify Logo" class="h-8 drop-shadow-custom-cyan" />
   </a>
-  <nav class="space-x-4">
-    {
-      links.map((link) => (
-        <a href={link.href} class="text-[#15fefe] hover:underline">
-          {link.label}
-        </a>
-      ))
-    }
-  </nav>
+  <div class="w-12 md:w-auto h-12 md:h-max rounded-full md:rounded-none [&>nav]:hover:translate-x-0 text-center content-center ">
+    <p class="text-2xl font-serif text-[#15fefe] md:hidden">☰</p>
+    <nav class="w-[80vw] md:w-auto h-screen md:h-max fixed md:relative top-0 right-0 translate-x-full transition md:translate-x-0 flex flex-col md:flex-row justify-center md:justify-around items-start md:items-center px-5 gap-3 md:space-x-4 bg-gray-900 md:bg-transparent z-50">
+      {
+        links.map((link) => (
+          <a href={link.href} class="text-[#15fefe] hover:underline py-2">
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
 </header>
