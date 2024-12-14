@@ -1,25 +1,31 @@
 ---
 import { getCollection } from "astro:content";
 
-const products = await getCollection('products');
+const products = await getCollection("products");
 ---
 
-<section id="products" class="py-16 bg-fondo">
-  <h2 class="text-3xl text-cian font-semibold text-center mb-8">
+<section id="products" class="py-20 p-2">
+  <h2
+    class="text-4xl font-serif font-bold text-center mb-8 drop-shadow-custom-dark"
+  >
     Nuestros Productos
   </h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 text-white">
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 text-white"
+  >
     {
       products.map((product) => (
-        <div class="bg-gray-900 p-4 rounded hover:scale-105 transition">
+        <div transition:name={`container-${product.data.title}`} class="bg-gray-900 p-4 rounded hover:shadow-md hover:shadow-[#15fefe] transition">
           <img
+            transition:name={`img-${product.data.title}`}
             src={product.data.image}
             alt={product.data.title}
             class="w-full h-auto object-cover rounded"
           />
-          <h3 class="text-cian mt-4">{product.data.title}</h3>
-          <p class="text-textoSecundario text-sm">{product.data.description}</p>
+          <h3 transition:name={`title-${product.data.title}`} class="text-cian mt-4">{product.data.title}</h3>
+          <p transition:name={`description-${product.data.title}`} class="text-textoSecundario text-sm">{product.data.description}</p>
           <a
+          transition:name={`btn-${product.data.title}`}
             href={`/products/${product.slug}`}
             class="mt-2 flex w-full font-semibold justify-center  bg-[#15fefe] text-fondo p-2 rounded hover:bg-opacity-80"
           >

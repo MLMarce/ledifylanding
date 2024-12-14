@@ -17,22 +17,61 @@ const features = productData.features;
 ---
 
 <Layout title={`${product.slug} - Ledify`}>
-  <h1>{productData.title}</h1>
-  <img src={productData.image} alt={productData.title} />
-  <p>{productData.description}</p>
-  <ul>
-    {features ? features.map((feature) => <li>{feature}</li>) : null}
-  </ul>
-  <p><strong>Precio:</strong> {productData.price}</p>
-  {
-    productData.isAvailable ? (
-      <p>
-        <strong>¡Disponible!</strong>
-      </p>
-    ) : (
-      <p>
-        <strong>Agotado</strong>
-      </p>
-    )
-  }
+  <div class="w-full min-h-screen flex justify-center items-center p-5 pt-20 md:pt-7">
+    <div
+      transition:name={`container-${product.data.title}`}
+      class="bg-gray-900 p-6 rounded max-w-4xl h-max w-full content-center"
+    >
+      <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
+        {/* Imagen */}
+        <img
+          transition:name={`img-${product.data.title}`}
+          class="w-full md:w-1/2 h-auto object-cover rounded"
+          src={productData.image}
+          alt={productData.title}
+        />
+        {/* Detalles del Producto */}
+        <div class="w-full md:w-1/2 flex flex-col">
+          <h1
+            transition:name={`title-${product.data.title}`}
+            class="text-cian text-3xl font-semibold mb-4"
+          >
+            {productData.title}
+          </h1>
+          <p
+            transition:name={`description-${product.data.title}`}
+            class="text-textoSecundario text-sm mb-4"
+          >
+            {productData.description}
+          </p>
+          <ul class="text-textoSecundario text-sm mb-4 list-disc list-inside">
+            {features ? features.map((feature) => <li>{feature}</li>) : null}
+          </ul>
+          <p class="text-white mb-4">
+            <strong>Precio:</strong>
+            {productData.price}
+          </p>
+          {
+            productData.isAvailable ? (
+              <p class="text-green-500 font-semibold mb-4">
+                <strong>¡Disponible!</strong>
+              </p>
+            ) : (
+              <p class="text-red-500 font-semibold mb-4">
+                <strong>Agotado</strong>
+              </p>
+            )
+          }
+          {/* Botón "Lo quiero" */}
+          <a
+            transition:name={`btn-${product.data.title}`}
+            href="#comprar"
+            class="mt-4 flex w-full font-semibold justify-center bg-[#15fefe] text-black p-2 rounded hover:bg-opacity-80 transition"
+          >
+            ¡Lo quiero!
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </Layout>

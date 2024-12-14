@@ -6,16 +6,28 @@ export interface Props {
   buttonLink: string;
 }
 
-const { title, subtitle, buttonLink, buttonText} = Astro.props
+const { title, subtitle, buttonLink, buttonText } = Astro.props;
 ---
 
-<section class="bg-fondo text-center py-16">
-  <h1 class="text-4xl font-bold text-cian mb-4">{title}</h1>
-  <p class="text-textoSecundario mb-6">{subtitle}</p>
-  <a
-    href={buttonLink}
-    class="bg-cian text-fondo py-2 px-4 rounded hover:bg-opacity-80"
+<section
+  id="hero"
+  class="text-center py-16 w-full h-screen max-h-[1920px] relative"
+>
+  <img
+    src="/fondotv.webp"
+    alt="fondo hero"
+    class="w-full h-screen max-h-[1920px] object-cover"
+  />
+  <div
+    class="w-full h-full flex flex-col justify-center items-center gap-4 absolute top-0 left-0 z-10"
   >
-    {buttonText}
-  </a>
+    <h1 class="text-6xl md:text-7xl font-bold text-[#15fefe] mb-4 shadow-md shadow-black backdrop-blur-xl p-2 px-4 drop-shadow-md font-serif">{title}</h1>
+    <p class="text-[#dddddd] text-xl w-full md:w-max font-semibold bg-gray-950 p-2">{subtitle}</p>
+    <a
+      href={buttonLink}
+      class="bg-[#15fefe] text-gray-900 text-xl drop-shadow-md py-4 px-5 rounded hover:bg-opacity-80 mt-6"
+    >
+      {buttonText} 
+    </a>
+  </div>
 </section>

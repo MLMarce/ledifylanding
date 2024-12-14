@@ -4,15 +4,19 @@ export interface Props {
   links: { href: string; label: string }[];
 }
 
-const {logo, links} = Astro.props
+const { logo, links } = Astro.props;
 ---
 
-<header class="flex justify-between items-center bg-fondo p-4 px-10">
-  <img src={logo} alt="Ledify Logo" class="h-8" />
+<header
+  class="fixed top-0 left-0 w-full h-max flex justify-between items-center bg-fondo p-4 px-10 backdrop-blur-xl z-50"
+>
+  <a href="/#hero">
+    <img src={logo} alt="Ledify Logo" class="h-8 drop-shadow-custom-cyan" />
+  </a>
   <nav class="space-x-4">
     {
       links.map((link) => (
-        <a href={link.href} class="text-cian hover:underline">
+        <a href={link.href} class="text-[#15fefe] hover:underline">
           {link.label}
         </a>
       ))
