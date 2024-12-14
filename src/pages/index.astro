@@ -4,16 +4,26 @@ import Layout from "../layouts/Layout.astro";
 import ledifyLogo from "../assets/3r.png";
 import HeroSection from "../components/HeroSection.astro";
 import Footer from "../components/Footer.astro";
+import ProductsGrid from "../components/ProductsGrid.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-  <Header logo={ledifyLogo.src} links={[{href: '#products', label: 'products'}]}  />
+<Layout title="Ledify landing">
+  <Header
+    logo={ledifyLogo.src}
+    links={[{ href: "#products", label: "products" }]}
+  />
 
-  <HeroSection title="Ledify Technology" subtitle="Ilumina tus espacios con estilo y color." buttonText="Explora nuestra colección" buttonLink="#products"/>
+  <HeroSection
+    title="Ledify Technology"
+    subtitle="Ilumina tus espacios con estilo y color."
+    buttonText="Explora nuestra colección"
+    buttonLink="#products"
+  />
+
+  <ProductsGrid/>
 
   <Footer />
-
 </Layout>

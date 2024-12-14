@@ -1,34 +1,27 @@
 ---
-export interface Product {
-  image: string;
-  title: string;
-  description: string;
-  link: string;
-}
+import { getCollection } from "astro:content";
 
-export interface Props {
-  products: Product[];
-}
+const products = await getCollection('products');
 ---
 
-<section id="productos" class="py-16 bg-fondo">
+<section id="products" class="py-16 bg-fondo">
   <h2 class="text-3xl text-cian font-semibold text-center mb-8">
     Nuestros Productos
   </h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 text-white">
     {
       products.map((product) => (
-        <div class="bg-gray-900 p-4 rounded">
+        <div class="bg-gray-900 p-4 rounded hover:scale-105 transition">
           <img
-            src={product.image}
-            alt={product.title}
-            class="w-full h-40 object-cover rounded"
+            src={product.data.image}
+            alt={product.data.title}
+            class="w-full h-auto object-cover rounded"
           />
-          <h3 class="text-cian mt-4">{product.title}</h3>
-          <p class="text-textoSecundario text-sm">{product.description}</p>
+          <h3 class="text-cian mt-4">{product.data.title}</h3>
+          <p class="text-textoSecundario text-sm">{product.data.description}</p>
           <a
-            href={product.link}
-            class="mt-2 inline-block bg-cian text-fondo py-1 px-2 rounded hover:bg-opacity-80"
+            href={`/products/${product.slug}`}
+            class="mt-2 flex w-full font-semibold justify-center  bg-[#15fefe] text-fondo p-2 rounded hover:bg-opacity-80"
           >
             Ver Más
           </a>
