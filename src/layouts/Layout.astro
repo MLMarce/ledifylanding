@@ -8,6 +8,13 @@ export interface Props {
   title: string;
 }
 const { title } = Astro.props;
+
+const links = [
+  { href: "/#hero", label: "Inicio" },
+  { href: "/#products", label: "Productos" },
+  { href: "/terminos", label: "Términos y condiciones" },
+  { href: "/privacidad", label: "Políticas de privacidad" },
+];
 ---
 
 <!doctype html>
@@ -28,10 +35,10 @@ const { title } = Astro.props;
     />
     <Header
       logo={ledifyLogo.src}
-      links={[{ href: "/#products", label: "Productos" }]}
+      links={links}
     />
     <slot />
-    <Footer/>
+    <Footer />
   </body>
 </html>
 
