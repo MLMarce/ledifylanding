@@ -1,0 +1,39 @@
+---
+export interface Product {
+  image: string;
+  title: string;
+  description: string;
+  link: string;
+}
+
+export interface Props {
+  products: Product[];
+}
+---
+
+<section id="productos" class="py-16 bg-fondo">
+  <h2 class="text-3xl text-cian font-semibold text-center mb-8">
+    Nuestros Productos
+  </h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
+    {
+      products.map((product) => (
+        <div class="bg-gray-900 p-4 rounded">
+          <img
+            src={product.image}
+            alt={product.title}
+            class="w-full h-40 object-cover rounded"
+          />
+          <h3 class="text-cian mt-4">{product.title}</h3>
+          <p class="text-textoSecundario text-sm">{product.description}</p>
+          <a
+            href={product.link}
+            class="mt-2 inline-block bg-cian text-fondo py-1 px-2 rounded hover:bg-opacity-80"
+          >
+            Ver Más
+          </a>
+        </div>
+      ))
+    }
+  </div>
+</section>
