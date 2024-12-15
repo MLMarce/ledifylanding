@@ -1,0 +1,143 @@
+---
+// contact.astro
+---
+<section id="contact" class="bg-gray-900 text-gray-100 py-16">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold tracking-tight sm:text-5xl font-serif">Contáctanos</h2>
+        <p class="mt-4 text-lg text-gray-400">
+          ¿Tienes preguntas, comentarios o sugerencias? ¡Estamos aquí para ayudarte! Completa el formulario a continuación y te responderemos lo antes posible.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- Información de contacto -->
+        <div class="space-y-6">
+          <h3 class="text-2xl font-semibold">Información de contacto</h3>
+          <p class="text-gray-400">
+            Puedes comunicarte con nosotros a través de este formulario o por cualquiera de los medios indicados a continuación.
+          </p>
+          <div class="space-y-4">
+            <div class="flex items-center space-x-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6 text-cyan-400"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21 10.5c0 7.456-8.26 10.5-9 10.5-.74 0-9-3.044-9-10.5C3 5.74 6.477 3 12 3s9 2.74 9 7.5z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M14.25 10.5a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"
+                />
+              </svg>
+              <p class="text-gray-300">Buenos Aires, Argentina</p>
+            </div>
+            <div class="flex items-center space-x-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6 text-cyan-400"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 3v11.25c0 4.5 9 9.75 9 9.75s9-5.25 9-9.75V3H3.75z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 7.5v6"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 7.5v6"
+                />
+              </svg>
+              <p class="text-gray-300">marcelodaniellencina@gmail.com</p>
+            </div>
+            <div class="flex items-center space-x-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6 text-cyan-400"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M16.5 7.5h6m-6 0v6m0-6l9 9M6 2.25v19.5M12 12h.008v.008H12V12z"
+                />
+              </svg>
+              <p class="text-gray-300">(+54) 3498-620869</p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Formulario de contacto -->
+        <div class="bg-gray-800 p-8 rounded-lg shadow-lg">
+          <h3 class="text-2xl font-semibold mb-4">Envíanos un mensaje</h3>
+          <form id="contact-form" class="space-y-6">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-400">
+                Nombre
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="mt-1 block w-full rounded-md bg-gray-900 text-gray-300 border border-gray-700 focus:ring-cyan-500 focus:border-cyan-500 p-2"
+                placeholder="Tu nombre"
+                required
+              />
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-400">
+                Correo electrónico
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="mt-1 block w-full rounded-md bg-gray-900 text-gray-300 border border-gray-700 focus:ring-cyan-500 focus:border-cyan-500 p-2"
+                placeholder="Tu correo electrónico"
+                required
+              />
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-400">
+                Mensaje
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                class="mt-1 block w-full rounded-md bg-gray-900 text-gray-300 border border-gray-700 focus:ring-cyan-500 focus:border-cyan-500 p-2"
+                placeholder="Tu mensaje"
+                required
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="w-full py-3 px-6 bg-cyan-500 text-white font-semibold rounded-md hover:bg-cyan-600 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2"
+            >
+              Enviar mensaje
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  
