@@ -18,7 +18,7 @@ const { logo, links } = Astro.props;
     <nav class="w-[80vw] md:w-auto h-screen md:h-max fixed md:relative top-0 right-0 translate-x-full transition md:translate-x-0 flex flex-col md:flex-row justify-center md:justify-around items-start md:items-center px-5 gap-3 md:space-x-4 bg-gray-900 md:bg-transparent z-50">
       {
         links.map((link) => (
-          <a href={link.href} class="text-[#15fefe] hover:underline py-2">
+          <a href={link.href} class="text-[#15fefe] hover:underline py-2 drop-shadow-custom-dark">
             {link.label}
           </a>
         ))

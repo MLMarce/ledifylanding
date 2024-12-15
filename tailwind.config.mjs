@@ -5,7 +5,7 @@ export default {
     extend: {
       dropShadow: {
         "custom-cyan": "0 0px 3px rgba(21, 255, 254, 1)", // Ejemplo con cian
-        "custom-dark": "0 0px 3px rgba(1, 1, 1, 1)", // Ejemplo con rosado
+        "custom-dark": ["0 0px 3px rgba(1, 1, 1, 1)","0 0px 4px rgba(1, 1, 1, 1)"], // Ejemplo con rosado
       },
 	  backgroundColor: {
 		"fondo": "url('/fondotv.webp)",
